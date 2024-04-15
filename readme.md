@@ -1,26 +1,65 @@
-# browser-extension-template
+# VA page checker
 
-[link-rgh]: https://github.com/sindresorhus/refined-github
+<!-- [link-rgh]: https://github.com/sindresorhus/refined-github
 [link-ngh]: https://github.com/sindresorhus/notifier-for-github
 [link-hfog]: https://github.com/sindresorhus/hide-files-on-github
 [link-tsconfig]: https://github.com/sindresorhus/tsconfig
 [link-options-sync]: https://github.com/fregante/webext-options-sync
 [link-cws-keys]: https://github.com/fregante/chrome-webstore-upload-keys
-[link-amo-keys]: https://addons.mozilla.org/en-US/developers/addon/api/key
+[link-amo-keys]: https://addons.mozilla.org/en-US/developers/addon/api/key -->
 
-> Cross-browser extension boilerplate - barebones template with Parcel 2, options handler and auto-publishing.
+> Highlight web components, accessibility issues, and other issues on VA.gov pages
 
-Screenshot of extension options:
-
-![Sample extension options output](media/previewer.png)
+<img width="500" alt="page showing an orange outlined va-telephone component and a dark red outlines telephone link" src="media/example.png" />
 
 ## Features
 
-- Uses Manifest v3 ([not yet compatible with Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1578284))
-- Use npm dependencies thanks to Parcel 2.
-- [Auto-syncing options](#auto-syncing-options).
-- [Auto-publishing](#publishing) with auto-versioning and support for manual releases.
+Highlights
+- VA design system web components:
+  - orange highlight on USWDS v3 components
+  - dark red highlight on USWDS v1 components
 
+- Dark red highlights on elements that _should_ be web components:
+  - Div modal -> `va-modal`
+  - Plain button -> `va-button`
+  - Plain checkbox -> `va-checkbox`
+  - Plain number input -> `va-number-input`
+  - Plain radio input -> `va-radio-option`
+  - Plain search input -> `va-search-input`
+  - Plain select -> `va-select`
+  - Plain telephone link -> `va-telephone`
+  - Plain text input -> `va-text-input`
+  - Plain textarea -> `va-textarea`
+
+- Issues (rules copied from [Smashing magazine "Apps For All" by Heydon Pickering](https://www.smashingmagazine.com/ebooks/apps-for-all-coding-accessible-web-applications/)):
+  - buttons missing a `type`
+  - disabled elements
+  - links (`a`) missing an `href`
+  - links (`a`) that are empty and missing an `aria-label` and `aria-labelledby`
+  - buttons that are empty and missing an `aria-label` and `aria-labelledby`
+  - images missing `alt` content
+  - sections nested within sections
+  - elements with a `role="status"` without an `aria-live="polite"`
+  - elements with a `role="alert"` without an `aria-live="assertive"`
+  - elements with a `aria-live="polite"` without a `role="status"`
+  - elements with a `aria-live="assertive"` without a `role="alert"`
+
+- Extra issues
+  - links (`a`) with `target="_blank"` missing `ref="noreferrer noopener"`
+  - links (`a`) going outside of VA.gov domain missing `ref="noreferrer noopener"`
+
+Hover over the highlighted outline to reveal the component
+
+### Run locally
+
+1. Download the zip or clone the repo `git clone https://github.com/Mottie/va-page-checker`
+2. Open browser's extension page `chrome://extension` (for Chrome)
+3. Enable "Developer mode"
+4. Use "Load unpacked" button
+5. Target the `va-page-checker/source` folder
+6. Pin the "VA page checker" icon and toggle the button to highlight content
+
+<!--
 ## Getting started
 
 ### 1️⃣ Create your own copy
@@ -110,8 +149,10 @@ Extension icon made by [Freepik](https://www.freepik.com) from [www.flaticon.com
 
 - [notlmn/copy-as-markdown](https://github.com/notlmn/copy-as-markdown) - Browser extension to copy hyperlinks, images, and selected text as Markdown.
 
+-->
+
 ## License
 
-This browser extension template is released under [CC0](#license) and mentioned below. There is no `license` file included in here, but when you clone this template, you should include your own license file for the specific license you choose to use.
+This browser extension is released under [CC0](#license).
 
 [![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)

@@ -1,17 +1,41 @@
-import optionsStorage from './options-storage.js';
+/* global: webComponentSelectors, noMissingWcCss, buildWcCss, buildMissingWcCss, buildExtraCss */
+const mainSheet = new CSSStyleSheet();
+const missingWcSheet = new CSSStyleSheet();
+const selectors = webComponentSelectors();
 
-console.log('💈 Content script loaded for', chrome.runtime.getManifest().name);
+function init() {
+	mainSheet.disabled = false;
+	missingWcSheet.disabled = false;
 
-async function init() {
-	const options = await optionsStorage.getAll();
-	const color = `rgb(${options.colorRed}, ${options.colorGreen},${options.colorBlue})`;
-	const text = options.text;
-	const notice = document.createElement('div');
-	notice.innerHTML = text;
-	document.body.prepend(notice);
-	notice.id = 'text-notice';
-	notice.style.border = '2px solid ' + color;
-	notice.style.color = color;
+	[...buildWcCss(), ...buildExtraCss()].forEach(rule => {
+		mainSheet.insertRule(rule);
+	});
+
+	buildMissingWcCss().forEach(rule => {
+		missingWcSheet.insertRule(rule);
+	});
+}
+
+async function update() {
+	const enabled = document.body.classList.contains('va-checked-enabled');
+	mainSheet.disabled = !enabled;
+	missingWcSheet.disabled = !enabled;
+
+	document.adoptedStyleSheets = [mainSheet, missingWcSheet];
+	console.log(document.querySelectorAll(selectors));
+	[...document.querySelectorAll(selectors)].forEach(wc => {
+		if (!wc.shadowRoot) {
+			return;
+		}
+
+		const tag = wc.tagName.toLowerCase();
+		// assuming web components only have 1 adoptedStyleSheet
+		wc.shadowRoot.adoptedStyleSheets[1] = mainSheet;
+		if (!noMissingWcCss.has(tag)) {
+			console.log('injected missing into', wc);
+			wc.shadowRoot.adoptedStyleSheets[2] = missingWcSheet;
+		}
+	});
 }
 
 init();
