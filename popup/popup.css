@@ -1,0 +1,100 @@
+html, body {
+  width: 225px;
+  height: 205px;
+  overflow: hidden;
+}
+body {
+  background: #111;
+  color: #ccc;
+}
+
+h1 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+h1 img {
+  margin-right: 8px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  margin-bottom: 8px;
+}
+
+.toggle-wrap {
+  position: relative;
+  display: block;
+  width: 150px;
+  margin-left: 4px;
+  margin-bottom: 6px;
+}
+
+.btn {
+  background: #162e51;
+  border: 3px solid #162e51;
+  color: #fff;
+  display: inline-block;
+  padding: 4px;
+  position: relative;
+  text-align: center;
+}
+
+input[type=radio].toggle:not(:checked) + label:hover,
+.btn:hover {
+  background: #1a4480;
+}
+
+input[type=radio].toggle {
+  display: none;
+}
+
+input[type=radio].toggle + label {
+  cursor: pointer;
+  min-width: 60px;
+}
+
+input[type=radio].toggle + label:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+input[type=radio].toggle.toggle-left + label {
+  border-right: 0;
+}
+
+input[type=radio].toggle.toggle-left + label:after {
+  left: 100%;
+}
+
+input[type=radio].toggle.toggle-right + label {
+  margin-left: -4px;
+}
+
+input[type=radio].toggle.toggle-right + label:after {
+  left: -100%;
+}
+
+input[type=radio].toggle:not(:checked) + label {
+  background: none;
+}
+
+input[type=radio].toggle:checked + label:after {
+  left: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

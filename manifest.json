@@ -12,15 +12,17 @@
 		}
 	},
 	"icons": {
-		"128": "octo-on.png"
+		"128": "icons/octo.png"
 	},
 	"action": {
-    "default_icon": "octo-off.png",
-    "browser_style": true
+		"default_popup": "popup/popup.html",
+    "default_icon": "icons/octo.png"
   },
 	"permissions": [
+		"activeTab",
+		"tabs",
 		"scripting",
-		"tabs"
+		"storage"
 	],
 	"host_permissions": [
 		"https://*.va.gov/*"
@@ -29,14 +31,11 @@
 		{
 			"matches": [ "https://*.va.gov/*" ],
 			"js": [
-				"build-css.js",
-				"content.js"
+				"scripts/constants.js",
+				"scripts/build-css.js",
+				"scripts/content.js"
 			 ],
 			"run_at": "document_end"
 		}
-	],
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
-	}
+	]
 }

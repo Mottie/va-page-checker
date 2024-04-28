@@ -1,0 +1,61 @@
+<html>
+  <body>
+    <h1>
+      <img src="../icons/octo.png" alt="va page checker icon" width="30" />
+      VA page checker
+    </h1>
+    <form>
+      <fieldset>
+        <legend>Choose page highlights:</legend>
+        <ul>
+          <li>
+            <label for="version">
+              <input id="version" type="checkbox" />
+              Web component version
+            </label>
+          </li>
+          <li>
+            <label for="missing">
+              <input id="missing" type="checkbox" />
+              Missing web components
+            </label>
+          </li>
+          <li>
+            <label for="a11y">
+              <input id="a11y" type="checkbox" />
+              Accessibility issues
+            </label>
+          </li>
+          <li>
+            <label for="datadog">
+              <input id="datadog" type="checkbox" />
+              DataDog privacy classes
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <hr />
+      <div class="toggle-wrap">
+        <input
+          name="toggle"
+          type="radio"
+          id="enabled"
+          class="toggle toggle-left"
+          value="false"
+          checked
+        />
+        <label for="enabled" class="btn">Enable</label>
+        <input
+          name="toggle"
+          type="radio"
+          id="disabled"
+          class="toggle toggle-right"
+          value="true"
+        />
+        <label for="disabled" class="btn">Disable</label>
+      </div>
+    </form>
+  </body>
+  <link href="popup.css" rel="stylesheet" />
+  <script defer src="popup.js" type="module"></script>
+</html>

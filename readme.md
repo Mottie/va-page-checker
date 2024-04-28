@@ -56,7 +56,7 @@ Hover over the highlighted outline to reveal the component
 2. Open browser's extension page `chrome://extension` (for Chrome)
 3. Enable "Developer mode"
 4. Use "Load unpacked" button
-5. Target the `va-page-checker/source` folder
+5. Target the `va-page-checker` folder
 6. Pin the "VA page checker" icon and toggle the button to highlight content
 
 <!--

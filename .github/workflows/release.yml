@@ -1,5 +1,5 @@
 env:
-  DIRECTORY: distribution
+  DIRECTORY: ''
   PROJECT_NAME: extension
 
 # FILE GENERATED WITH: npx ghat fregante/ghatemplates/webext
@@ -26,7 +26,7 @@ jobs:
         uses: fregante/daily-version-action@v2
       - name: Update manifest.json with version ${{ env.DAILY_VERSION}}
         if: env.DAILY_VERSION_CREATED
-        run: npx dot-json@1 "$DIRECTORY/manifest.json" version "$DAILY_VERSION"
+        run: npx dot-json@1 "manifest.json" version "$DAILY_VERSION"
       - name: Ready for "submit" jobs
         if: env.DAILY_VERSION_CREATED
         uses: actions/upload-artifact@v3
