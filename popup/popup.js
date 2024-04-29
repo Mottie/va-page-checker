@@ -13,7 +13,7 @@ const savedPreferences = Object.keys(currentPreferences).length
 	? currentPreferences
 	: defaultPreferences;
 
-Object.keys(savedPreferences.options).forEach(id => {
+Object.keys(savedPreferences?.options || {}).forEach(id => {
 	document.getElementById(id).checked = savedPreferences.options[id];
 });
 
