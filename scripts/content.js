@@ -18,8 +18,8 @@ const setupSheet = (sheet, rules) => {
 	});
 };
 
-const setDisabled = (sheet, options) => {
-	sheets[sheet].disabled = options.disabled || !options[sheet] || false;
+const setDisabled = (sheet, options = {}) => {
+	sheets[sheet].disabled = options?.disabled || !options?.[sheet] || false;
 };
 
 const update = options => {
