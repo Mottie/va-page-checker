@@ -25,11 +25,15 @@
 		"storage"
 	],
 	"host_permissions": [
-		"https://*.va.gov/*"
+		"https://*.va.gov/*",
+		"http://localhost:3001/*"
 	],
 	"content_scripts": [
 		{
-			"matches": [ "https://*.va.gov/*" ],
+			"matches": [
+				"https://*.va.gov/*",
+				"http://localhost:3001/*"
+			],
 			"js": [
 				"scripts/constants.js",
 				"scripts/build-css.js",
