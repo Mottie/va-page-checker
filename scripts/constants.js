@@ -1,16 +1,21 @@
 /* eslint-disable no-unused-vars */
-/* global COLOR_ERROR, COLOR_USWDS, DEFAULT_SELECTORS, LAYOUT, USES_BEFORE, WC_NO_INJECT */
-/* exported COLOR_ERROR, COLOR_USWDS, DEFAULT_SELECTORS, LAYOUT, USES_BEFORE, WC_NO_INJECT */
-const COLOR_ERROR = 'darkred';
-const COLOR_USWDS = 'orange';
+/* global COLORS, DEFAULT_SELECTORS, LAYOUT, USES_BEFORE, WC_NO_INJECT */
+/* exported COLORS, DEFAULT_SELECTORS, LAYOUT, USES_BEFORE, WC_NO_INJECT */
+const COLORS = {
+	ERROR: '#5D1818',
+	USWDS: '#205D18',
+	A11Y: '#706100',
+	DATADOG: '#5D185B',
+};
 const LAYOUT = [
 	'position: absolute',
-	'right: 0',
+	'left: 0',
 	'bottom: 0',
 	'z-index: 1',
-	'opacity: 90%',
+	'opacity: 85%',
 	'padding: 3px',
 	'color: #fff',
+	'min-width: 200px',
 ].join('; ');
 
 // Current list as of April 2024; only used as a fallback
