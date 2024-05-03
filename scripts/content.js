@@ -1,5 +1,7 @@
+/* global setTimeout, clearTimeout, console */
 /* global WC_NO_INJECT, webComponentSelectors */
 /* global buildA11yCss, buildDataDogCss, buildMissingCss, buildVersionCss */
+let timeout;
 const selectors = webComponentSelectors();
 
 const sheets = {
@@ -31,18 +33,26 @@ const update = options => {
 	// inject styles into current page
 	document.adoptedStyleSheets = Object.values(sheets);
 
-	[...document.querySelectorAll(selectors)].forEach(wc => {
-		if (!wc.shadowRoot) {
-			return;
-		}
+	clearTimeout(timeout);
+	timeout = setTimeout(() => {
+		console.group();
+		// delay injecting styles into web component to allow them to initialize
+		[...document.querySelectorAll(selectors)].forEach(wc => {
+			if (!wc.shadowRoot) {
+				return;
+			}
 
-		const tag = wc.tagName.toLowerCase();
-		// assuming web components only have 1 adoptedStyleSheet
-		wc.shadowRoot.adoptedStyleSheets[1] = sheets.version;
-		if (!WC_NO_INJECT.has(tag)) {
-			wc.shadowRoot.adoptedStyleSheets[2] = sheets.missing;
-		}
-	});
+			const tag = wc.tagName.toLowerCase();
+			console.log(`injecting styles into ${tag}`);
+
+			// assuming web components only have 1 adoptedStyleSheet
+			wc.shadowRoot.adoptedStyleSheets[1] = sheets.version;
+			if (!WC_NO_INJECT.has(tag)) {
+				wc.shadowRoot.adoptedStyleSheets[2] = sheets.missing;
+			}
+		});
+		console.groupEnd();
+	}, 1500);
 };
 
 const init = () => {
