@@ -28,6 +28,9 @@
 		"https://*.va.gov/*",
 		"http://localhost:3001/*"
 	],
+	"background": {
+		"service_worker": "scripts/background.js"
+	},
 	"content_scripts": [
 		{
 			"matches": [
