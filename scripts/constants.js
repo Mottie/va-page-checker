@@ -10,7 +10,7 @@ const COLORS = {
 const LAYOUT = [
 	'position: absolute',
 	'left: 0',
-	'bottom: 0',
+	'top: 0',
 	'z-index: 1',
 	'opacity: 85%',
 	'padding: 3px',

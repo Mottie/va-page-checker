@@ -72,13 +72,13 @@ const buildA11yCss = () => [
 	add(
 		'a[target="_blank"]:not([ref*="noreferrer"], [ref*="noopener"])',
 		'Link opening new tab missing noreferrer and/or noopener',
-		COLORS.A11Y,
+		COLORS.ERROR,
 	),
 	add(
 		// include role because of va-additional-info expander uses 'a[role="button"]'
 		'a:not([role], [href^="#"], [href^="/"], [href*="va.gov"], [href^="tel:"], [href^="sms:"], [href^="mailto:"]):not([ref*="noreferrer"], [ref*="noopener"])',
 		'External Link missing noreferrer and/or noopener',
-		COLORS.A11Y,
+		COLORS.ERROR,
 	),
 ].flat();
 
@@ -93,7 +93,17 @@ const buildDataDogCss = () => [
 		COLORS.DATADOG,
 	),
 	add(
+		'[data-dd-privacy="hidden"][data-dd-action-name]',
+		' DataDog Mask + " attr(data-dd-action-name) " action name',
+		COLORS.DATADOG,
+	),
+	add(
 		'.dd-privacy-hidden[data-dd-action-name]',
+		' DataDog Hidden + " attr(data-dd-action-name) " action name',
+		COLORS.DATADOG,
+	),
+	add(
+		'[data-dd-privacy="mask"][data-dd-action-name]',
 		' DataDog Hidden + " attr(data-dd-action-name) " action name',
 		COLORS.DATADOG,
 	),
