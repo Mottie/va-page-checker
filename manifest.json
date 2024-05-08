@@ -27,7 +27,7 @@
 	"host_permissions": [
 		"https://*.va.gov/*",
 		"http://localhost:3001/*",
-		"http://*.review.vetsgov-internal"
+		"http://*.review.vetsgov-internal/*"
 	],
 	"background": {
 		"service_worker": "scripts/background.js"
@@ -37,7 +37,7 @@
 			"matches": [
 				"https://*.va.gov/*",
 				"http://localhost:3001/*",
-				"http://*.review.vetsgov-internal"
+				"http://*.review.vetsgov-internal/*"
 			],
 			"js": [
 				"scripts/constants.js",
