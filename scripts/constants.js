@@ -18,8 +18,8 @@ const LAYOUT = [
 	'min-width: 200px',
 ].join('; ');
 
-// Current list as of April 2024; only used as a fallback
-const DEFAULT_SELECTORS = 'va-header-minimal,va-omb-info,va-date,va-memorable-date,va-notification,va-statement-of-truth,va-banner,va-button-pair,va-file-input,va-privacy-agreement,va-accordion,va-accordion-item,va-additional-info,va-alert-expandable,va-back-to-top,va-breadcrumbs,va-checkbox-group,va-icon,va-loading-indicator,va-maintenance-banner,va-minimal-footer,va-need-help,va-number-input,va-on-this-page,va-pagination,va-process-list,va-process-list-item,va-progress-bar,va-promo-banner,va-radio,va-radio-option,va-search-input,va-segmented-progress-bar,va-summary-box,va-table,va-table-row,va-textarea,va-alert,va-button,va-crisis-line-modal,va-official-gov-banner,va-card,va-link,va-checkbox,va-select,va-text-input,va-modal,va-telephone';
+// Current list as of May 2024; only used as a fallback
+const DEFAULT_SELECTORS = 'va-accordion,va-accordion-item,va-additional-info,va-alert,va-alert-expandable,va-back-to-top,va-banner,va-breadcrumbs,va-button,va-button-icon,va-button-pair,va-card,va-checkbox,va-checkbox-group,va-crisis-line-modal,va-date,va-file-input,va-header-minimal,va-icon,va-link,va-loading-indicator,va-maintenance-banner,va-memorable-date,va-minimal-footer,va-modal,va-need-help,va-notification,va-number-input,va-official-gov-banner,va-omb-info,va-on-this-page,va-pagination,va-privacy-agreement,va-process-list,va-process-list-item,va-progress-bar,va-promo-banner,va-radio,va-radio-option,va-search-input,va-segmented-progress-bar,va-select,va-statement-of-truth,va-summary-box,va-table,va-table-inner,va-table-row,va-telephone,va-text-input,va-textarea';
 
 // Web components that use the :before psuedo element for styling - listed so we
 // don't interfere
