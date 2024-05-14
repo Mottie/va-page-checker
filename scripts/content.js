@@ -43,8 +43,10 @@ const update = options => {
 
 			// assuming web components only have 1 adoptedStyleSheet
 			wc.shadowRoot.adoptedStyleSheets[1] = sheets.version;
+			wc.shadowRoot.adoptedStyleSheets[2] = sheets.a11y;
+			wc.shadowRoot.adoptedStyleSheets[3] = sheets.datadog;
 			if (!WC_NO_INJECT.has(tag)) {
-				wc.shadowRoot.adoptedStyleSheets[2] = sheets.missing;
+				wc.shadowRoot.adoptedStyleSheets[4] = sheets.missing;
 			}
 		});
 	}, 1500);
