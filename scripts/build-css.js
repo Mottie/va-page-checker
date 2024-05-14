@@ -45,6 +45,8 @@ const buildA11yCss = () => [
 	// img don't have interal content, so :before won't work here
 	`img:only-child:not([alt]) { ${outline(COLORS.A11Y)} }`,
 	'img:only-child:not([alt]):hover { outline: none; }',
+	// Target image wrapper to include a message
+	add(':has(> img:not([alt]))', 'Missing image alt', COLORS.A11Y),
 
 	add('section > section:first-child', 'Nested sections', COLORS.A11Y),
 	add(
