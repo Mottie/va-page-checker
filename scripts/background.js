@@ -6,6 +6,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
 	if (
 		url.includes('va.gov') ||
 		url.includes('localhost:3001') ||
+		url.includes('review.vetsgov-internal') ||
 		statusLoading
 	) {
 		statusLoading = true;
