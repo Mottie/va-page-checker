@@ -63,7 +63,7 @@ Hover over the highlighted outline to reveal the component
 ### Run locally
 
 1. Download the zip or clone the repo `git clone https://github.com/Mottie/va-page-checker`
-2. Open browser's extension page `chrome://extension` (for Chrome)
+2. Open browser's extension page `chrome://extension` for Chrome, or `edge://extensions` for Edge
 3. Enable "Developer mode"
 4. Use "Load unpacked" button
 5. Target the `va-page-checker` folder
