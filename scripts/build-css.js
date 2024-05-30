@@ -72,13 +72,13 @@ const buildA11yCss = () => [
 
 	// Custom
 	add(
-		'a[target="_blank"]:not([ref*="noreferrer"], [ref*="noopener"])',
+		'a[target="_blank"]:not([rel*="noreferrer"], [rel*="noopener"])',
 		'Link opening new tab missing noreferrer and/or noopener',
 		COLORS.ERROR,
 	),
 	add(
 		// include role because of va-additional-info expander uses 'a[role="button"]'
-		'a:not([role], [href^="#"], [href^="/"], [href*="va.gov"], [href^="tel:"], [href^="sms:"], [href^="mailto:"]):not([ref*="noreferrer"], [ref*="noopener"])',
+		'a:not([role], [href^="#"], [href^="/"], [href*="va.gov"], [href^="tel:"], [href^="sms:"], [href^="mailto:"]):not([rel*="noreferrer"], [rel*="noopener"])',
 		'External Link missing noreferrer and/or noopener',
 		COLORS.ERROR,
 	),
