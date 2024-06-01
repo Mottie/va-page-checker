@@ -46,8 +46,8 @@ Highlights
 	- elements with a `aria-live="polite"` without a `role="status"`
 	- elements with a `aria-live="assertive"` without a `role="alert"`
 
-	- links (`a`) with `target="_blank"` missing `ref="noreferrer noopener"`
-	- links (`a`) going outside of VA.gov domain missing `ref="noreferrer noopener"`
+	- links (`a`) with `target="_blank"` missing `rel="noreferrer noopener"`
+	- links (`a`) going outside of VA.gov domain missing `rel="noreferrer noopener"`
 
 - DataDog privacy settings (purple highlights)
 
