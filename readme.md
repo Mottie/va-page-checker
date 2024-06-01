@@ -60,6 +60,10 @@ Highlights
 
 Hover over the highlighted outline to reveal the component
 
+### Install
+
+[![VA page checker in the Chrome web store](media/chrome-web-store.png)](https://chromewebstore.google.com/detail/va-page-checker/bohcdnelkeimoooidokojkcjdaahjbkb)
+
 ### Run locally
 
 1. Download the zip or clone the repo `git clone https://github.com/Mottie/va-page-checker`
