@@ -64,4 +64,7 @@ const buildA11yCss = () => [
 		'External Link missing noreferrer and/or noopener',
 		COLORS.ERROR,
 	),
+  // adding aria-hidden to stuff that shouldn't have it
+  add('[aria-hidden="true"]:not(img, svg, :empty)', 'aria-hidden', COLORS.A11Y),
+  add(':has(> .sr-only)', 'contains screen-reader only text', COLORS.A11Y),
 ].flat();
