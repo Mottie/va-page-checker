@@ -1,12 +1,15 @@
-/* global setTimeout, clearTimeout */
+/* global setTimeout */
 /* global WC_NO_INJECT, webComponentSelectors */
-/* global buildA11yCss, buildDataDogCss, buildMissingCss, buildVersionCss */
+/* global buildA11yCss, buildDataDogCss, buildLandmarkCss, buildMissingCss,
+   buildOtherCss, buildVersionCss */
 const selectors = webComponentSelectors();
 
 const sheets = {
 	a11y: new CSSStyleSheet(),
 	datadog: new CSSStyleSheet(),
+	landmarks: new CSSStyleSheet(),
 	missing: new CSSStyleSheet(),
+	other: new CSSStyleSheet(),
 	version: new CSSStyleSheet(),
 };
 
@@ -26,7 +29,9 @@ const setDisabled = (sheet, options = {}) => {
 const update = options => {
 	setDisabled('a11y', options);
 	setDisabled('datadog', options);
+	setDisabled('landmarks', options);
 	setDisabled('missing', options);
+	setDisabled('other', options);
 	setDisabled('version', options);
 
 	// inject styles into current page
@@ -45,8 +50,10 @@ const update = options => {
 			wc.shadowRoot.adoptedStyleSheets[1] = sheets.version;
 			wc.shadowRoot.adoptedStyleSheets[2] = sheets.a11y;
 			wc.shadowRoot.adoptedStyleSheets[3] = sheets.datadog;
+			wc.shadowRoot.adoptedStyleSheets[4] = sheets.landmarks;
+			wc.shadowRoot.adoptedStyleSheets[5] = sheets.other;
 			if (!WC_NO_INJECT.has(tag)) {
-				wc.shadowRoot.adoptedStyleSheets[4] = sheets.missing;
+				wc.shadowRoot.adoptedStyleSheets[6] = sheets.missing;
 			}
 		});
 	}, 1500);
@@ -55,7 +62,9 @@ const update = options => {
 const init = () => {
 	setupSheet('a11y', buildA11yCss());
 	setupSheet('datadog', buildDataDogCss());
+	setupSheet('landmarks', buildLandmarkCss());
 	setupSheet('missing', buildMissingCss());
+	setupSheet('other', buildOtherCss());
 	setupSheet('version', buildVersionCss());
 
 	chrome.runtime.onMessage.addListener(newPreferences => {

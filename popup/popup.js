@@ -3,7 +3,9 @@ const defaultPreferences = {
 	datadog: true,
 	disabled: false,
 	enabled: true,
+	landmarks: true,
 	missing: true,
+	other: true,
 	version: true,
 };
 

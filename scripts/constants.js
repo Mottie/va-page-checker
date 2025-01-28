@@ -6,6 +6,8 @@ const COLORS = {
 	USWDS: '#205D18',
 	A11Y: '#706100',
 	DATADOG: '#5D185B',
+	LANDMARKS: '#222222',
+	ARIA: '#BB5008',
 };
 const LAYOUT = [
 	'position: absolute',
@@ -18,8 +20,8 @@ const LAYOUT = [
 	'min-width: 200px',
 ].join('; ');
 
-// Current list as of May 2024; only used as a fallback
-const DEFAULT_SELECTORS = 'va-accordion,va-accordion-item,va-additional-info,va-alert,va-alert-expandable,va-back-to-top,va-banner,va-breadcrumbs,va-button,va-button-icon,va-button-pair,va-card,va-checkbox,va-checkbox-group,va-crisis-line-modal,va-date,va-file-input,va-header-minimal,va-icon,va-link,va-loading-indicator,va-maintenance-banner,va-memorable-date,va-minimal-footer,va-modal,va-need-help,va-notification,va-number-input,va-official-gov-banner,va-omb-info,va-on-this-page,va-pagination,va-privacy-agreement,va-process-list,va-process-list-item,va-progress-bar,va-promo-banner,va-radio,va-radio-option,va-search-input,va-segmented-progress-bar,va-select,va-statement-of-truth,va-summary-box,va-table,va-table-inner,va-table-row,va-telephone,va-text-input,va-textarea';
+// Current list as of Jan 2025; only used as a fallback
+const DEFAULT_SELECTORS = 'va-accordion,va-accordion-item,va-additional-info,va-alert,va-alert-expandable,va-alert-sign-in,va-back-to-top,va-banner,va-breadcrumbs,va-button,va-button-icon,va-button-pair,va-card,va-checkbox,va-checkbox-group,va-combo-box,va-crisis-line-modal,va-date,va-file-input,va-file-input-multiple,va-header-minimal,va-icon,va-language-toggle,va-link,va-link-action,va-loading-indicator,va-maintenance-banner,va-memorable-date,va-minimal-footer,va-modal,va-need-help,va-notification,va-official-gov-banner,va-omb-info,va-on-this-page,va-pagination,va-privacy-agreement,va-process-list,va-process-list-item,va-progress-bar,va-promo-banner,va-radio,va-radio-option,va-search-input,va-segmented-progress-bar,va-select,va-statement-of-truth,va-summary-box,va-table,va-table-inner,va-table-row,va-telephone,va-text-input,va-textarea';
 
 // Web components that use the :before psuedo element for styling - listed so we
 // don't interfere
