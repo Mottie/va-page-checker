@@ -23,7 +23,7 @@ Highlights
 </details>
 
 <details>
-<summary>Elements that <em>should</em> be web components</summary>
+<summary>Elements that <em>should</em> be web components (imposter components)</summary>
 <!-- -->
 
 <img width="300" alt="page showing red outlined telephone links that should be va-telephone we components" src="media/example-missing.png" />

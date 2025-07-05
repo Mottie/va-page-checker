@@ -1,6 +1,6 @@
 html, body {
   width: 225px;
-  height: 250px;
+  height: 232px;
   overflow: hidden;
 }
 body {
@@ -37,8 +37,8 @@ legend {
 }
 
 .btn {
-  background: #162e51;
-  border: 3px solid #162e51;
+  background: #005ea2;
+  border: 3px solid #005ea2;
   color: #fff;
   display: inline-block;
   padding: 4px;
@@ -48,7 +48,7 @@ legend {
 
 input[type=radio].toggle:not(:checked) + label:hover,
 .btn:hover {
-  background: #1a4480;
+  background: #162e51;
 }
 
 input[type=radio].toggle {
