@@ -4,8 +4,9 @@
 
 const outline = color => `outline: dotted 5px ${color}; position: relative;`;
 
-const message = (msg, color) =>
-	`content: "${msg.replace(/"/g, '\\"')}"; background-color: ${color}; ${LAYOUT}`;
+const formatMessage = (msg, color, escapeQuotes) =>
+	`content: "${escapeQuotes ? msg.replace(/"/g, '\\"') : msg
+		}"; white-space:pre; background-color: ${color}; ${LAYOUT}`;
 
 // Find & parse web component hydrated styling
 // "slot-fb{...}va-a,va-b{visibility: hidden}.hydrated{visibility:inherit}"
@@ -16,11 +17,19 @@ const webComponentSelectors = () => {
 	return (end - start > 500) ? text.slice(start, end) : DEFAULT_SELECTORS;
 };
 
-const add = (selector, msg, color = COLORS.ERROR, useAfter) => [
+const add = ({
+	selector,
+	message,
+	color = COLORS.ERROR,
+	useAfter = false,
+	escapeQuotes = true,
+}) => [
 	`${selector} { ${outline(color)} }`,
 	`${selector}${useAfter ? ':after' : ':before'} {
-		${message(msg, color)}
+	  ${formatMessage(message, color, escapeQuotes)}
 	}`,
 	`${selector}:hover { outline: none; }`,
-	`${selector}:hover:before { content: ""; background-color: transparent; }`,
+	`${selector}:hover${useAfter ? ':after' : ':before'} {
+	  content: ""; background-color: transparent;
+	}`,
 ];
