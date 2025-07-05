@@ -4,13 +4,44 @@
 /* eslint-disable-next-line no-unused-vars */
 const buildOtherCss = () => [
 	// Live regions
-	add('[role="alert"]', 'role=alert', COLORS.ARIA, true),
-	add('[role="log"]', 'role=log', COLORS.ARIA),
-	add('[role="marquee"]', 'role=marquee', COLORS.ARIA),
-	add('[role="status"]', 'role=status', COLORS.ARIA),
-	add('[role="timer"]', 'role=timer', COLORS.ARIA),
+	add({
+		selector: '[role="alert"]',
+		message: 'role=alert',
+		color: COLORS.ARIA,
+		useAfter: true,
+	}),
+	add({
+		selector: '[role="log"]',
+		message: 'role=log',
+		color: COLORS.ARIA,
+	}),
+	add({
+		selector: '[role="marquee"]',
+		message: 'role=marquee',
+		color: COLORS.ARIA,
+	}),
+	add({
+		selector: '[role="status"]',
+		message: 'role=status',
+		color: COLORS.ARIA,
+	}),
+	add({
+		selector: '[role="timer"]',
+		message: 'role=timer',
+		color: COLORS.ARIA,
+	}),
 
 	// Disable ARIA
-	add('[role="presentation"]', 'role=presentation', COLORS.ARIA, true),
-	add('[role="none"]', 'role=none', COLORS.ARIA, true),
+	add({
+		selector: '[role="presentation"]',
+		message: 'role=presentation',
+		color: COLORS.ARIA,
+		useAfter: true,
+	}),
+	add({
+		selector: '[role="none"]',
+		message: 'role=none',
+		color: COLORS.ARIA,
+		useAfter: true,
+	}),
 ].flat();

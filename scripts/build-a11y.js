@@ -85,7 +85,7 @@ const buildA11yCss = () =>
 			selector:
 				// include role because of va-additional-info expander uses 'a[role="button"]'
 				'a:not([role], [href^="#"], [href^="/"], [href*="va.gov"], [href^="tel:"], [href^="sms:"], [href^="mailto:"]):not([rel*="noreferrer"], [rel*="noopener"])',
-			message: 'External Link missing noreferrer and/or noopener',
+			message: 'External Link missing\\a noreferrer and/or noopener',
 			color: COLORS.ERROR,
 		}),
 		// adding aria-hidden to stuff that shouldn't have it
