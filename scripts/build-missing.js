@@ -19,21 +19,6 @@ const buildMissingCss = () =>
 			useAfter: true,
 		}),
 		add({
-			selector: 'a[type="number"]',
-			message: "Imposter va-number-input",
-			useAfter: true,
-		}),
-		add({
-			selector: 'a[type="radio"]',
-			message: "Imposter va-radio-option",
-			useAfter: true,
-		}),
-		add({
-			selector: 'a[type="text"]',
-			message: "Imposter va-text-input",
-			useAfter: true,
-		}),
-		add({
 			selector: "a:not([type])",
 			message: "Imposter va-link",
 			useAfter: true,
@@ -57,8 +42,19 @@ const buildMissingCss = () =>
 			message: "Imposter va-checkbox",
 		}),
 		add({
+			selector: 'input[type="number"]',
+			message: "Imposter va-number-input",
+			useAfter: true,
+		}),
+		add({
 			selector: 'input[type="radio"]',
 			message: "Imposter va-radio",
+			useAfter: true,
+		}),
+		add({
+			selector: 'input[type="text"]',
+			message: "Imposter va-text-input",
+			useAfter: true,
 		}),
 		add({
 			selector: 'input[type="search"]',
