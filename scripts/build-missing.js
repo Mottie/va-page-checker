@@ -6,7 +6,7 @@
 const buildMissingCss = () =>
   [
     add({
-      selector: '.va-modal, [aria-modal]',
+      selector: ['.va-modal', '[aria-modal]'],
       message: 'Imposter va-modal',
     }),
     add({
@@ -19,7 +19,7 @@ const buildMissingCss = () =>
       useAfter: true,
     }),
     add({
-      selector: 'a:not([href]), a[download], a[target], a[rel]',
+      selector: ['a:not([href])', 'a[download]', 'a[target]', 'a[rel]'],
       message: 'Imposter va-link',
       useAfter: true,
     }),
@@ -39,39 +39,49 @@ const buildMissingCss = () =>
       message: 'Imposter button?',
     }),
     add({
-      selector: 'button[type]',
+      selector: [
+        'button[type="submit"]',
+        'button[type="reset"]',
+        'button[type="button"]',
+        'button:not([type])',
+        ':has(> input[type="button"])',
+      ],
       message: 'Imposter va-button',
     }),
     add({
-      selector: 'input[type="checkbox"]',
+      selector: ':has(> input[type="checkbox"])',
       message: 'Imposter va-checkbox',
     }),
     add({
-      selector: 'input[type="number"]',
+      selector: ':has(> input[type="number"])',
       message: 'Imposter va-number-input',
       useAfter: true,
     }),
     // ignore inputs inside va-radio-option (open DOM)
     add({
-      selector: 'input[type="radio"]:not(.va-radio-option__input)',
+      selector: ':has(> input[type="radio"]:not(.va-radio-option__input))',
       message: 'Imposter va-radio-option',
       useAfter: true,
     }),
     add({
-      selector: 'input[type="text"]',
+      selector: ':has(> input[type="text"])',
       message: 'Imposter va-text-input',
       useAfter: true,
     }),
     add({
-      selector: 'input[type="search"]',
+      selector: ':has(> input[type="search"])',
       message: 'Imposter va-search-input',
     }),
     add({
-      selector: 'select',
+      selector: ':has(> input[type="file"])',
+      message: 'Imposter va-file-input',
+    }),
+    add({
+      selector: ':has(> select)',
       message: 'Imposter va-select',
     }),
     add({
-      selector: 'textarea',
+      selector: ':has(> textarea)',
       message: 'Imposter va-textarea',
     }),
   ].flat();
