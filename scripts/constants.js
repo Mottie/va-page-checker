@@ -26,12 +26,9 @@ const LAYOUT = [
 const DEFAULT_SELECTORS =
   'va-accordion,va-accordion-item,va-additional-info,va-alert,va-alert-expandable,va-alert-sign-in,va-back-to-top,va-banner,va-breadcrumbs,va-button,va-button-icon,va-button-pair,va-button-segmented,va-card,va-checkbox,va-checkbox-group,va-combo-box,va-crisis-line-modal,va-critical-action,va-date,va-file-input,va-file-input-multiple,va-header-minimal,va-icon,va-language-toggle,va-link,va-link-action,va-loading-indicator,va-maintenance-banner,va-memorable-date,va-minimal-footer,va-modal,va-need-help,va-notification,va-official-gov-banner,va-omb-info,va-on-this-page,va-pagination,va-privacy-agreement,va-process-list,va-process-list-item,va-progress-bar,va-promo-banner,va-radio,va-radio-option,va-search-filter,va-search-input,va-segmented-progress-bar,va-select,va-service-list-item,va-statement-of-truth,va-summary-box,va-table,va-table-inner,va-table-row,va-telephone,va-telephone-input,va-text-input,va-textarea';
 
-const DEPRECATED_WEB_COMPONENTS = [
-  'va-notification',
-  'va-promo-banner',
-];
+const DEPRECATED_WEB_COMPONENTS = ['va-notification', 'va-promo-banner'];
 
-// Web components that use the :before psuedo element for styling - listed so we
+// Web components that use the :before pseudo element for styling - listed so we
 // don't interfere
 const USES_BEFORE = new Set([
   'va-link',
@@ -51,12 +48,15 @@ const WC_NO_INJECT = new Set([
   'va-button-icon',
   'va-button',
   'va-checkbox',
+  'va-date',
   'va-link-action',
   'va-link',
+  'va-memorable-date',
   'va-modal',
   'va-number-input',
   'va-on-this-page',
   'va-radio',
+  'va-radio-option',
   'va-search-input',
   'va-select',
   'va-telephone-input',

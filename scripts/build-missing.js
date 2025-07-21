@@ -51,9 +51,10 @@ const buildMissingCss = () =>
       message: 'Imposter va-number-input',
       useAfter: true,
     }),
+    // ignore inputs inside va-radio-option (open DOM)
     add({
-      selector: 'input[type="radio"]',
-      message: 'Imposter va-radio',
+      selector: 'input[type="radio"]:not(.va-radio-option__input)',
+      message: 'Imposter va-radio-option',
       useAfter: true,
     }),
     add({
