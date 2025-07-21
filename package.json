@@ -1,29 +1,29 @@
 {
-	"name": "VA-page-checker",
-	"description": "Highlight web components, accessibility issues, and other issues on VA.gov pages",
-	"license": "CC0-1.0",
-	"scripts": {
-		"test": "eslint -c eslint.config.js"
-	},
-	"browserslist": [
-		"last 1 Chrome version",
-		"last 1 Firefox version"
-	],
-	"devDependencies": {
-		"eslint": "^9.30.1"
-	},
-	"targets": {
-		"default": {
-			"source": "manifest.json",
-			"distDir": ""
-		}
-	},
-	"webExt": {
-		"sourceDir": "",
-		"run": {
-			"startUrl": [
-				"https://github.com/Mottie/va-page-checker"
-			]
-		}
-	}
+  "name": "VA-page-checker",
+  "description": "Highlight web components, accessibility issues, and other issues on VA.gov pages",
+  "license": "CC0-1.0",
+  "scripts": {
+    "test": "eslint -c eslint.config.js"
+  },
+  "browserslist": [
+    "last 1 Chrome version",
+    "last 1 Firefox version"
+  ],
+  "devDependencies": {
+    "eslint": "^9.30.1"
+  },
+  "targets": {
+    "default": {
+      "source": "manifest.json",
+      "distDir": ""
+    }
+  },
+  "webExt": {
+    "sourceDir": "",
+    "run": {
+      "startUrl": [
+        "https://github.com/Mottie/va-page-checker"
+      ]
+    }
+  }
 }

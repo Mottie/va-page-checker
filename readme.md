@@ -74,7 +74,6 @@ Custom rules:
 
 <details>
 <summary>DataDog privacy settings</summary>
-	
 <img width="400" alt="page showing purple outlined elements with datadog hidden and masked privacy classes and some with an additional action name" src="media/example-datadog.png" />
 
 (purple highlights)

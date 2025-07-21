@@ -1,56 +1,56 @@
 {
-	"name": "VA page checker",
-	"version": "1.3.1",
-	"description": "Highlights VA web components and accessibility issues",
-	"homepage_url": "https://github.com/Mottie/va-page-checker",
-	"manifest_version": 3,
-	"minimum_chrome_version": "100",
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "va-page-checker@mottie.github.io",
-			"strict_min_version": "100.0"
-		}
-	},
-	"icons": {
-		"128": "icons/octo.png"
-	},
-	"action": {
-		"default_popup": "popup/popup.html",
+  "name": "VA page checker",
+  "version": "1.3.1",
+  "description": "Highlights VA web components and accessibility issues",
+  "homepage_url": "https://github.com/Mottie/va-page-checker",
+  "manifest_version": 3,
+  "minimum_chrome_version": "100",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "va-page-checker@mottie.github.io",
+      "strict_min_version": "100.0"
+    }
+  },
+  "icons": {
+    "128": "icons/octo.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
     "default_icon": "icons/octo.png"
   },
-	"permissions": [
-		"activeTab",
-		"tabs",
-		"scripting",
-		"storage"
-	],
-	"host_permissions": [
-		"https://*.va.gov/*",
-		"http://localhost:3001/*",
-		"http://*.review.vetsgov-internal/*"
-	],
-	"background": {
-		"service_worker": "scripts/background.js"
-	},
-	"content_scripts": [
-		{
-			"matches": [
-				"https://*.va.gov/*",
-				"http://localhost:3001/*",
-				"http://*.review.vetsgov-internal/*"
-			],
-			"js": [
-				"scripts/constants.js",
-				"scripts/build.js",
-				"scripts/build-a11y.js",
-				"scripts/build-datadog.js",
-				"scripts/build-landmarks.js",
-				"scripts/build-missing.js",
-				"scripts/build-other.js",
-				"scripts/build-version.js",
-				"scripts/content.js"
-			 ],
-			"run_at": "document_end"
-		}
-	]
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.va.gov/*",
+    "http://localhost:3001/*",
+    "http://*.review.vetsgov-internal/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.va.gov/*",
+        "http://localhost:3001/*",
+        "http://*.review.vetsgov-internal/*"
+      ],
+      "js": [
+        "scripts/constants.js",
+        "scripts/build.js",
+        "scripts/build-a11y.js",
+        "scripts/build-datadog.js",
+        "scripts/build-landmarks.js",
+        "scripts/build-missing.js",
+        "scripts/build-other.js",
+        "scripts/build-version.js",
+        "scripts/content.js"
+       ],
+      "run_at": "document_end"
+    }
+  ]
 }
