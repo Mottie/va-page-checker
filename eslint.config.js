@@ -15,7 +15,7 @@ module.exports = [
        buildA11yCss: true,
        buildDataDogCss: true,
        buildExtraCss: true,
-       buildMissingCss: true,
+       buildImposterCss: true,
        buildVersionCss: true,
        chrome: 'readonly',
        COLOR_ERROR: true,

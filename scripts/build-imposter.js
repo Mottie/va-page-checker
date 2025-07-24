@@ -1,9 +1,9 @@
 /* global add */
-/* exported buildMissingCss */
+/* exported buildImposterCss */
 
 // Build elements that should be web components CSS
 /* eslint-disable-next-line no-unused-vars */
-const buildMissingCss = () =>
+const buildImposterCss = () =>
   [
     add({
       selector: ['.va-modal', '[aria-modal]'],
@@ -19,7 +19,12 @@ const buildMissingCss = () =>
       useAfter: true,
     }),
     add({
-      selector: ['a:not([href])', 'a[download]', 'a[target]', 'a[rel]'],
+      selector: [
+        'a[href]:not([href^="tel:"]):not([class*="action-link"])',
+        'a[download]',
+        'a[target]',
+        'a[rel]',
+      ],
       message: 'Imposter va-link',
       useAfter: true,
     }),

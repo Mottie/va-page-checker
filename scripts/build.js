@@ -16,6 +16,7 @@ const webComponentSelectors = () => {
     document.head.querySelector('style[data-styles]')?.textContent || '';
   const start = text.indexOf('}va-') + 1;
   const end = text.lastIndexOf('{visibility:hidden}');
+  // Check selector string length, in case format changed; fallback to default
   return end - start > 500 ? text.slice(start, end) : DEFAULT_SELECTORS;
 };
 

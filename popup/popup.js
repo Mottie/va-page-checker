@@ -4,7 +4,7 @@ const defaultPreferences = {
   disabled: false,
   enabled: true,
   landmarks: true,
-  missing: true,
+  imposter: true,
   other: true,
   version: true,
 };

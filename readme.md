@@ -31,6 +31,8 @@ Highlights
 (dark red highlights)
 
 - Div modal -> `va-modal`
+- All links -> `va-link`
+- All action links -> `va-link-action`
 - Plain button -> `va-button`
 - Plain checkbox -> `va-checkbox`
 - Plain number input -> `va-number-input`

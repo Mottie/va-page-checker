@@ -45,7 +45,7 @@
         "scripts/build-a11y.js",
         "scripts/build-datadog.js",
         "scripts/build-landmarks.js",
-        "scripts/build-missing.js",
+        "scripts/build-imposter.js",
         "scripts/build-other.js",
         "scripts/build-version.js",
         "scripts/content.js"

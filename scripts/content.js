@@ -1,6 +1,6 @@
 /* global setTimeout */
 /* global WC_NO_INJECT, webComponentSelectors */
-/* global buildA11yCss, buildDataDogCss, buildLandmarkCss, buildMissingCss,
+/* global buildA11yCss, buildDataDogCss, buildLandmarkCss, buildImposterCss,
    buildOtherCss, buildVersionCss */
 const selectors = webComponentSelectors();
 
@@ -8,7 +8,7 @@ const sheets = {
   a11y: new CSSStyleSheet(),
   datadog: new CSSStyleSheet(),
   landmarks: new CSSStyleSheet(),
-  missing: new CSSStyleSheet(),
+  imposter: new CSSStyleSheet(),
   other: new CSSStyleSheet(),
   version: new CSSStyleSheet(),
 };
@@ -30,7 +30,7 @@ const update = options => {
   setDisabled('a11y', options);
   setDisabled('datadog', options);
   setDisabled('landmarks', options);
-  setDisabled('missing', options);
+  setDisabled('imposter', options);
   setDisabled('other', options);
   setDisabled('version', options);
 
@@ -53,7 +53,7 @@ const update = options => {
       wc.shadowRoot.adoptedStyleSheets[4] = sheets.landmarks;
       wc.shadowRoot.adoptedStyleSheets[5] = sheets.other;
       if (!WC_NO_INJECT.has(tag)) {
-        wc.shadowRoot.adoptedStyleSheets[6] = sheets.missing;
+        wc.shadowRoot.adoptedStyleSheets[6] = sheets.imposter;
       }
     });
   }, 1500);
@@ -63,7 +63,7 @@ const init = () => {
   setupSheet('a11y', buildA11yCss());
   setupSheet('datadog', buildDataDogCss());
   setupSheet('landmarks', buildLandmarkCss());
-  setupSheet('missing', buildMissingCss());
+  setupSheet('imposter', buildImposterCss());
   setupSheet('other', buildOtherCss());
   setupSheet('version', buildVersionCss());
 
