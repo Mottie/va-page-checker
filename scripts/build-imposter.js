@@ -48,7 +48,7 @@ const buildImposterCss = () =>
         'button[type="submit"]',
         'button[type="reset"]',
         'button[type="button"]',
-        'button:not([type])',
+        'button:not([type]):not(.va-alert-close)',
         ':has(> input[type="button"])',
       ],
       message: 'Imposter va-button',
