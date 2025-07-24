@@ -1,6 +1,6 @@
 {
   "name": "VA page checker",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Highlights VA web components and accessibility issues",
   "homepage_url": "https://github.com/Mottie/va-page-checker",
   "manifest_version": 3,
